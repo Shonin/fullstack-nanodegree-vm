@@ -1,0 +1,30 @@
+	x Manufacturers	/ & /manufacturers
+	x	New			/manufacturers/new
+	x	Edit		/manufacturer_url/edit
+	x	Delete		/manufacturer_url/delete
+
+	x Devices		/manufacturer_url/
+	x	New  		/manufacturer_url/newdevice
+	x	edit 		/manufacturer_url/device_url/edit
+	x	Delete 		/manufacturer_url/device_url/delete
+
+	x Guides		/manufacturer_url/device_url/
+	x	new 		/manufacturer_url/device_url/new
+	x	edit 		/manufacturer_url/device_url/guide_id/edit
+	x	delete 		/manufacturer_url/device_url/guide_id/delete
+
+	x Guide 		/manufacturer_url/device_url/guide_id/
+	x	New Step	/manufacturer_url/device_url/guide_id/new
+	x	Edit Step	/manufacturer_url/device_url/guide_id/step_id/edit
+	x	Delete Step /manufacturer_url/device_url/guide_id/step_id/delete
+
+make meta title, description, keywords columns for every object
+
+<html>
+<head>
+	
+</head>
+<body>
+
+</body>
+</html>

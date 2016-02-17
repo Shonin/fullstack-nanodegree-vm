@@ -1,0 +1,58 @@
+NOTES
+
+
+    num = select count(*) as num from standings;
+# returns the number of active players
+
+for i in num
+  select a.id, a.name, b.id, b.name from standings a, standings b
+    where a.row = 1 and b.row = 2;
+
+
+
+
+
+
+players: id, name
+matches: winner and loser -> reference players(id)
+
+create view win_count as
+    select winner, count(*) as wins
+    from matches
+    group by winner;
+    
+create view match_count as
+    select id, name, count(id=winner) as matches
+    from players left join matches on winner=id or loser=id
+    group by id
+    
+create view p_standing as
+    select id, 
+           name,
+           case when wins is null then 0 else wins end.
+           matches
+    from match_count left join win_count on id = winner
+    order by wins
+ 
+standings
+zip, append, list slicing   
+t = []          
+for p1, p2 in ():
+    t.append(...)
+
+
+----
+
+
+name and id for players
+
+matches table: winner and loser
+
+view = table that takes no fixed memory space, it's not
+  peristant
+
+  it can extract certain info
+
+  view to count wins
+  view to count matches
+  join in 3rd view to make standings

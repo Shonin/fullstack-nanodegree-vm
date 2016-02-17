@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	<h1>{{ category.name }} Items</h1>
+	{% if admin == 1 %}
+	<p>
+		<a href="{{ url_for('newItem', category_url = category.name)}}">
+			Create a new item
+		</a>
+	</p>
+	{% endif %}
+
+	{% for i in items %}
+
+	<p><a href="#"> {{ i.name }} </a></p>
+
+	{% if i.picture %}
+	<img src="{{ i.picture }}" width="300px">
+	</br>
+	{% endif %}
+	{% if admin == 1 %}
+	<p><a href="{{ url_for('editItem', category_url = category.name, 
+			item_url = i.name)}}">edit</a> - 
+		<a href="{{ url_for('deleteItem', category_url = category.name, 
+			item_url = i.name)}}">delete</a>
+	</p>
+	{% endif %}
+	</br>
+
+	{% endfor %}
+
+{% endblock %}
+
+</body>
+</html>

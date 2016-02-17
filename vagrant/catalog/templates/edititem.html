@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+	<body>
+		<h1>Edit {{ item.name }}</h1>
+
+		{% if item.picture %}
+		<img src="{{ item.picture }}" width=400px>
+		{% endif %}
+
+		<form action="{{ url_for('editItem', category_url = category.name, item_url = item.name) }}" method='post' enctype=multipart/form-data>
+
+			<p>New Name:<p>
+				<input type='text' size='30' name='name' placeholder='{{item.name}}'>
+
+			<p>Upload Different Photo</p>
+				<input type=file name=file>	
+
+
+			<p>Description<p>
+				<textarea rows='5' cols='50' type='text' name='description'>
+				</textarea>
+
+		</br>
+
+			<input type='submit' value=' Edit '>
+
+		</form>
+		<a href="{{ url_for('items', category_url = category.name)}}">
+			Cancel Edit
+		</a>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+
+</head>
+<body>
+
+	<h1>Create a New Item for {{ category.name }}</h1>
+
+	<form action="{{ url_for('newItem', category_url = category.name) }}"method='post' enctype=multipart/form-data>
+
+		<p>Name:<p>
+			<input type='text' size='30' name='name'>
+
+		<p>Upload Photo</p>
+			<input type=file name=file>
+
+		<p>Description<p>
+			<textarea rows='5' cols='50' type='text' name='description'>
+			</textarea>
+
+		</br>
+
+		<input type='submit' value='Create'>
+
+	</form>
+
+</body>
+</html>
